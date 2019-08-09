@@ -9,7 +9,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/restricted/data`)
+    axios.get(`http://localhost:5000/api/restricted/users`)
       .then(res => {
         console.log(res);
         const information = res.data;
@@ -22,26 +22,14 @@ export default class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <Register />
-          <h2>Information from restricted Data</h2>
+          <h2>User Information</h2>
 
           {this.state.information.map(info =>
-            <table>
-              <tbody>
-                <tr className="tablerow">
-                  <td>Name: {info.name}</td>
-                </tr>
-                <tr className="tablerow">
-                  <td>Course: {info.course}</td>
-                </tr>
-                <tr className="tablerow">
-                  <td>Technique: {info.technique}</td>
-                </tr>
-                <tr className="tablerow">
-                  <td>Ingredients: {info.ingredients}</td>
-                </tr>
 
-              </tbody>
-            </table>
+
+            <li>Username: {info.username}</li>
+
+
           )}
 
         </header>

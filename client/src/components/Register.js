@@ -12,7 +12,7 @@ function Register({ errors, touched, isSubmitting, status }) {
         if (status) {
             setUserInfo([...userInfo, status])
         }
-    }, [userInfo, status]);
+    }, [userInfo]);
 
 
     return (
